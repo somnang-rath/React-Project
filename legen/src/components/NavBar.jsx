@@ -5,27 +5,26 @@ import { UserRoundSearch, ShieldCheck, UserRound, Bell } from "lucide-react";
 import links from "../data/LinkPage/LinkIcon";
 const NavBar = () => {
   return (
-    <nav className="px-30 bg-gray-950/10">
+    <nav className="px-30 bg-gray-950/30 absolute w-full backdrop-blur-sm z-50">
       {/* Nav Bar  */}
       <div className=" flex justify-between items-center py-4 px-6 border-b-1 ">
+        {/** Logo Bar */}
+        <img src={logo} alt="Legend" />
         {/** Search Bar */}
-        <div className="rounded-full py-1 bg-gray-800/10 px-3 text-white border-[1px]">
-          <search className="flex text-white">
+        <div className="rounded-full px-3 py-1 border-[1px] border-gray-800 hover:border-gray-500">
+          <search className="flex text-white justify-center items-center">
             <input
               type="text"
               placeholder="Search.."
-              className="outline-none text-white"
+              className="outline-none text-white rounded h-8"
             />
             <UserRoundSearch size={20} />
           </search>
         </div>
 
-        {/** Logo Bar */}
-        <img src={logo} alt="Legend" />
-
         {/** Link Bar */}
         <ul className="flex px-1.5 space-x-3 text-white">
-          <li className="rounded-full px-3 py-1 border-[1px] border-gray-500 hover:border-gray-400">
+          <li className="rounded-full px-3 py-1 border-[1px] border-gray-800 hover:border-gray-500">
             <Link to={"/"} className="flex">
               <ShieldCheck size={20} />
               Ticket
