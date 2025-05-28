@@ -5,20 +5,15 @@ import Flooter from "../components/Flooter";
 
 const RootLayout = () => {
   return (
-    <div className="min-h-screen flex flex-col ">
+    <div className="min-h-screen flex flex-col">
       <NavBar />
       <main className="flex-grow">
         <Outlet />
       </main>
-      <div className="bg-gray-950 py-10">
+      <div className="bg-gray-950">
         <Flooter />
       </div>
     </div>
-
-    // <nav className="">
-    //   <NavBar />
-    //   <Outlet />
-    // </nav>
   );
 };
 

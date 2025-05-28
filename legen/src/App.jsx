@@ -1,6 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./Layout/RootLayout";
 import Home from "./page/Home";
+import DiamondMemberPage from "./page/DiamondMemberPage";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -12,7 +13,7 @@ const router = createBrowserRouter([
       },
       {
         path: "cinemas",
-        element: <h1>Cinemas</h1>,
+        element: <DiamondMemberPage />,
       },
       {
         path: "offers",

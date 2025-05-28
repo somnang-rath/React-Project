@@ -5,7 +5,7 @@ import { UserRoundSearch, ShieldCheck, UserRound, Bell } from "lucide-react";
 import links from "../data/LinkPage/LinkIcon";
 const NavBar = () => {
   return (
-    <nav className="px-30 bg-gray-950/30 absolute w-full backdrop-blur-sm z-50">
+    <nav className="px-30 fixed  w-full backdrop-blur-sm z-50">
       {/* Nav Bar  */}
       <div className=" flex justify-between items-center py-4 px-6 border-b-1 ">
         {/** Logo Bar */}
