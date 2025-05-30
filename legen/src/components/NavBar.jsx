@@ -16,7 +16,7 @@ const NavBar = () => {
             <input
               type="text"
               placeholder="Search.."
-              className="outline-none text-white rounded h-8"
+              className="outline-none text-black rounded h-8"
             />
             <UserRoundSearch size={20} />
           </search>

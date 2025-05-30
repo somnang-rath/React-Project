@@ -5,5 +5,6 @@ import img4 from "../assets/img/p4.jpeg";
 import img5 from "../assets/img/p5.jpeg";
 import img6 from "../assets/img/p6.jpeg";
 
+
 const images = [img1, img2, img3, img4, img5, img6];
 export default images;

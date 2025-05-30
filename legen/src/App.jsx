@@ -13,7 +13,7 @@ const router = createBrowserRouter([
       },
       {
         path: "cinemas",
-        element: <DiamondMemberPage />,
+        element: <cinemas />,
       },
       {
         path: "offers",
