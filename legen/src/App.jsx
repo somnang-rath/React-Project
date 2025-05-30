@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./Layout/RootLayout";
 import Home from "./page/Home";
 import DiamondMemberPage from "./page/DiamondMemberPage";
+import DetailMovie from "./page/DetailMovie";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -10,6 +11,10 @@ const router = createBrowserRouter([
       {
         index: true,
         element: <Home />,
+      },
+      {
+        path: ":id",
+        element: <DetailMovie />,
       },
       {
         path: "cinemas",
