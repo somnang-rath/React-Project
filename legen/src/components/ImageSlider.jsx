@@ -18,7 +18,7 @@ const ImageSlider = () => {
 
   return (
     <div
-      className="w-full  bg-cover bg-center transition-opacity duration-500  "
+      className="w-full 2xl:h-[500px] bg-cover bg-center transition-opacity duration-500 "
       style={{
         backgroundImage: `url(${images[index]})`,
         backgroundSize: "cover",
