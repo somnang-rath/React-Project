@@ -1,12 +1,13 @@
 import React from "react";
-import slider_location from "../assets/img/slider/slider_location.jpeg";
-import CardLocations from "../components/CardLocations";
-const Cinemas = () => {
+import offers from "../assets/img/slider/offers.jpeg";
+
+const Offers = () => {
   return (
-    <div className="">
+    <div>
+      {" "}
       <div
         style={{
-          backgroundImage: `url('${slider_location}')`,
+          backgroundImage: `url('${offers}')`,
           backgroundSize: "cover",
           backgroundPosition: "center",
         }}
@@ -15,19 +16,16 @@ const Cinemas = () => {
           <div className="px-20 2xl:px-0 2xl:w-8/12 2xl:mx-auto ">
             <div className="flex bg-gray-950 justify-between rounded-lg">
               <img
-                src={slider_location}
-                alt={slider_location}
+                src={offers}
+                alt={offers}
                 className="rounded-lg object-cover object-center "
               />
             </div>
           </div>
         </div>
       </div>
-      <div className="px-20 2xl:px-0 2xl:w-8/12 2xl:mx-auto">
-        <CardLocations />
-      </div>
     </div>
   );
 };
 
-export default Cinemas;
+export default Offers;

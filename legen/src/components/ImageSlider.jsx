@@ -18,7 +18,7 @@ const ImageSlider = () => {
 
   return (
     <div
-      className="w-full  bg-cover bg-center transition-opacity duration-500  "
+      className="w-full  bg-cover bg-center transition-all duration-1000  "
       style={{
         backgroundImage: `url(${images[index]})`,
         backgroundSize: "cover",
@@ -26,12 +26,12 @@ const ImageSlider = () => {
       }}
     >
       <div className="backdrop-blur-sm">
-        <div className="flex px-10  pb-3 2xl:w-8/12 2xl:mx-auto top-0 justify-center">
+        <div className="flex px-20 py-5 2xl:px-0 2xl:w-8/12 2xl:mx-auto top-0 justify-center">
           <div className="flex duration-500  justify-center ">
             <img
               src={images[index]}
               alt="slide"
-              className="w-full transition-opacity duration-500 rounded-xl shadow-md mt-[130px]"
+              className="w-full transition-all duration-1000 rounded-xl shadow-md mt-[130px]"
             />
 
             {/* Navigation Buttons */}

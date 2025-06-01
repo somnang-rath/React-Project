@@ -20,7 +20,7 @@ const DetailMovie = () => {
           backgroundPosition: "center",
         }}
       >
-        <div className="pb-3 pt-30 backdrop-blur-sm">
+        <div className=" pt-30 backdrop-blur-sm">
           <div className="px-20 2xl:px-0 2xl:w-8/12 2xl:mx-auto ">
             <div className="flex h-[550px] pl-16 bg-gray-950 justify-between rounded-lg">
               <div className="space-y-10 mt-30">
@@ -74,30 +74,35 @@ const DetailMovie = () => {
               />
             </div>
           </div>
+
+          <div className="flex justify-center items-center text-white space-x-5 my-6">
+            <button onClick={() => setShowe(true)} className="cursor-pointer">
+              <h1
+                className={`${
+                  showe
+                    ? "text-2xl font-bold text-shadow-zinc-800 text-shadow-lg"
+                    : "text-xl font-bold text-gray-300 text-shadow-zinc-800 text-shadow-lg"
+                }`}
+              >
+                Showtime
+              </h1>
+            </button>
+            <div className="w-1 h-10 bg-amber-50 mask-y-from-50% mask-y-to-90% "></div>
+            <button onClick={() => setShowe(false)} className="cursor-pointer">
+              <h1
+                className={`${
+                  showe
+                    ? "text-xl font-bold text-gray-300 text-shadow-zinc-800 text-shadow-lg"
+                    : "text-2xl font-bold text-shadow-zinc-800 text-shadow-lg"
+                }`}
+              >
+                Detail
+              </h1>
+            </button>
+          </div>
+          <div className="w-full h-[1px] bg-amber-50 mask-x-from-50% mask-x-to-90%  shadow-2xl"></div>
         </div>
       </div>
-      <div className="flex justify-center items-center text-white space-x-5 my-6">
-        <button onClick={() => setShowe(true)} className="cursor-pointer">
-          <h1
-            className={`${
-              showe ? "text-2xl font-bold" : "text-xl font-bold text-gray-300"
-            }`}
-          >
-            Showtime
-          </h1>
-        </button>
-        <div className="w-1 h-10 bg-amber-50 mask-y-from-50% mask-y-to-90% "></div>
-        <button onClick={() => setShowe(false)} className="cursor-pointer">
-          <h1
-            className={`${
-              showe ? "text-xl font-bold text-gray-300" : "text-2xl font-bold"
-            }`}
-          >
-            Detail
-          </h1>
-        </button>
-      </div>
-      <div className="w-full h-1 bg-amber-50 mask-x-from-50% mask-x-to-90%  shadow-2xl"></div>
       {showe ? <ShoweTime /> : <Detail />}
     </div>
   );

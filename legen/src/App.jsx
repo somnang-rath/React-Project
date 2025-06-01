@@ -3,6 +3,9 @@ import RootLayout from "./Layout/RootLayout";
 import Home from "./page/Home";
 import DiamondMemberPage from "./page/DiamondMemberPage";
 import DetailMovie from "./page/DetailMovie";
+import Cinemas from "./page/cinema";
+import LocationDetail from "./page/LocationDetail";
+import Offers from "./page/Offers";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -13,16 +16,20 @@ const router = createBrowserRouter([
         element: <Home />,
       },
       {
-        path: ":id",
+        path: "movie/:id",
         element: <DetailMovie />,
       },
       {
+        path: "location/:id",
+        element: <LocationDetail />,
+      },
+      {
         path: "cinemas",
-        element: <cinemas />,
+        element: <Cinemas />,
       },
       {
         path: "offers",
-        element: <h1>Offers</h1>,
+        element: <Offers />,
       },
       {
         path: "f&b",
