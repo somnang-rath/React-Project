@@ -6,7 +6,7 @@ import google_play from "../assets/google-play.png";
 const Flooter = () => {
   return (
     <div>
-      <div className=" px-60 2xl:px-80 2xl:w-8/12 2xl:mx-auto py-10">
+      <div className=" px-20 2xl:px-0 2xl:w-8/12 2xl:mx-auto py-10">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col  space-y-3">
             <h1 className="text-white font-bold text-xl">Company</h1>

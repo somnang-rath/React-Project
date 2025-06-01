@@ -26,7 +26,7 @@ const ImageSlider = () => {
       }}
     >
       <div className="backdrop-blur-sm">
-        <div className="flex px-60  pb-3 2xl:w-8/12 2xl:mx-auto  top-0 justify-center">
+        <div className="flex px-10  pb-3 2xl:w-8/12 2xl:mx-auto top-0 justify-center">
           <div className="flex duration-500  justify-center ">
             <img
               src={images[index]}
