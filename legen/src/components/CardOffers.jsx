@@ -11,7 +11,7 @@ const CardOffers = () => {
           <Link to={`/offers/${e.id.toString()}`}>
             <li
               key={e.id}
-              className="w-[350px] p-2  border-[1px] border-gray-400 rounded-lg space-y-3 bg-gradient-to-br from-zinc-300 to-zinc-200 overflow-hidden shadow-lg text-white hover:shadow-2xl hover:scale-105 duration-300 transition-all "
+              className="w-[365px] p-2  border-[1px] border-gray-400 rounded-lg space-y-3 bg-gradient-to-br from-zinc-300 to-zinc-200 overflow-hidden shadow-lg text-white hover:shadow-2xl hover:scale-105 duration-300 transition-all "
             >
               <img src={e.img} alt={e.title} className="rounded-lg h-60" />
               <p className="text-white font-bold text-xl truncate">{e.title}</p>
