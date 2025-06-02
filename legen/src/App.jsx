@@ -6,6 +6,7 @@ import DetailMovie from "./page/DetailMovie";
 import Cinemas from "./page/cinema";
 import LocationDetail from "./page/LocationDetail";
 import Offers from "./page/Offers";
+import OffersDetail from "./page/OffersDetail";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -22,6 +23,10 @@ const router = createBrowserRouter([
       {
         path: "location/:id",
         element: <LocationDetail />,
+      },
+      {
+        path: "offers/:id",
+        element: <OffersDetail />,
       },
       {
         path: "cinemas",
