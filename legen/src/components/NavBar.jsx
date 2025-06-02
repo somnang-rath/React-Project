@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import logo from "../assets/Legend-logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { UserRoundSearch, ShieldCheck, UserRound, Bell } from "lucide-react";
 import links from "../data/LinkPage/LinkIcon";
 const NavBar = () => {
+  const [showe, setShowe] = useState(false);
   return (
     <nav className="px-30 fixed  w-full backdrop-blur-sm z-50">
       {/* Nav Bar  */}
@@ -11,32 +12,35 @@ const NavBar = () => {
         {/** Logo Bar */}
         <img src={logo} alt="Legend" />
         {/** Search Bar */}
-        <div className="rounded-full px-3 py-1 border-[1px] border-gray-800 hover:border-gray-500">
+
+        <div className="group flex items-center justify-center space-x-2 rounded-full border-none   px-3 py-1 hover:border-gray-500 transition-all duration-500">
           <search className="flex text-white justify-center items-center">
             <input
               type="text"
               placeholder="Search.."
-              className="outline-none text-black rounded h-8"
+              className="w-0 group-hover:w-60 opacity-0 group-hover:opacity-100 text-black bg-white rounded-lg px-3 py-2 outline-none transition-all duration-500"
             />
-            <UserRoundSearch size={20} />
+            <div className="w-10 h-10 group-hover:w-0 group-hover:h-0 opacity-100 group-hover:opacity-0 bg-gray-500 rounded-full group-hover:hidden  flex justify-center items-center transition-all duration-500">
+              <UserRoundSearch size={20} />
+            </div>
           </search>
         </div>
 
         {/** Link Bar */}
         <ul className="flex px-1.5 space-x-3 text-white">
-          <li className="rounded-full px-3 py-1 border-[1px] border-gray-800 hover:border-gray-500">
-            <Link to={"/"} className="flex">
+          <li className="rounded-full px-3 py-1 border-[1px] border-gray-800 hover:border-gray-400 bg-gray-500 ">
+            <Link to={"/"} className="flex items-center">
               <ShieldCheck size={20} />
               Ticket
             </Link>
           </li>
-          <li className="rounded-full px-3 py-1 border-[1px] border-gray-500 hover:border-gray-400">
-            <Link to={"service"} className="flex">
+          <li className="rounded-full px-3 py-1 border-[1px] border-gray-500 hover:border-gray-400 bg-gray-500">
+            <Link to={"service"} className="flex items-center">
               <UserRound size={20} />
               Join New
             </Link>
           </li>
-          <li className="rounded-full px-3 py-1 border-[1px] border-gray-500 hover:border-gray-400">
+          <li className="rounded-full px-3 py-1 border-[1px] border-gray-500 hover:border-gray-400 bg-gray-500">
             <Link to={"service"} className="flex items-center">
               <Bell size={20} />
             </Link>

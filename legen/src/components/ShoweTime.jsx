@@ -9,7 +9,7 @@ const ShoweTime = () => {
     <div className="my-10">
       <div className="px-20 2xl:px-0 2xl:w-8/12 2xl:mx-auto text-white">
         <h1 className="text-4xl font-bold">Showe Time</h1>
-        <select className="w-full  p-2 py-4 rounded-md bg-zinc-900 text-white border  focus:outline-none ">
+        <select className="w-full  p-2 py-4 rounded-md bg-zinc-900 text-white border  focus:outline-none my-14">
           <option value="All Locations" className="">
             All Locations
           </option>

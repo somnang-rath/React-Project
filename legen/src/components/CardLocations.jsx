@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 const CardLocations = () => {
   return (
     <div>
+      <h1 className="text-4xl font-bold text-white my-8">Location</h1>
       <ul className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 mx-auto justify-items-center gap-2 ">
         {Locations.map((e) => (
           <Link to={`/location/${e.id.toString()}`}>
