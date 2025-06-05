@@ -8,7 +8,10 @@ const CardOffers = () => {
       <h1 className="text-4xl font-bold text-white my-16">Promotions</h1>
       <ul className="grid grid-cols-1 lg:grid-cols-3 2xl:grid-cols-4 mx-auto justify-items-center gap-2 space-y-5">
         {Offers.map((e) => (
-          <Link to={`/offers/${e.id.toString()}`}>
+          <Link
+            to={`/offers/${e.id.toString()}`}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+          >
             <li
               key={e.id}
               className="w-[365px] p-2  border-[1px] border-gray-400 rounded-lg space-y-3 bg-gradient-to-br from-zinc-300 to-zinc-200 overflow-hidden shadow-lg text-white hover:shadow-2xl hover:scale-105 duration-300 transition-all "

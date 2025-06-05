@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../assets/Legend-logo.png";
 import { NavLink, Link } from "react-router-dom";
 import { UserRoundSearch, ShieldCheck, UserRound, Bell } from "lucide-react";
 import links from "../data/LinkPage/LinkIcon";
 const NavBar = () => {
-  const [showe, setShowe] = useState(false);
   return (
     <nav className="px-30 fixed  w-full backdrop-blur-sm z-50">
       {/* Nav Bar  */}
@@ -27,21 +26,21 @@ const NavBar = () => {
         </div>
 
         {/** Link Bar */}
-        <ul className="flex px-1.5 space-x-3 text-white">
-          <li className="rounded-full px-3 py-1 border-[1px] border-gray-800 hover:border-gray-400 bg-gray-500 ">
+        <ul className="hidden lg:flex px-1.5 space-x-3 text-white">
+          <li className="rounded-full px-3 py-2 border-[1px] border-gray-800 hover:border-gray-400 bg-orange-600 text-xl">
             <Link to={"/"} className="flex items-center">
               <ShieldCheck size={20} />
               Ticket
             </Link>
           </li>
-          <li className="rounded-full px-3 py-1 border-[1px] border-gray-500 hover:border-gray-400 bg-gray-500">
-            <Link to={"service"} className="flex items-center">
+          <li className="rounded-full px-3 py-2 border-[1px] border-gray-500 hover:border-gray-400 bg-orange-600 text-xl">
+            <Link to={"/"} className="flex items-center">
               <UserRound size={20} />
               Join New
             </Link>
           </li>
-          <li className="rounded-full px-3 py-1 border-[1px] border-gray-500 hover:border-gray-400 bg-gray-500">
-            <Link to={"service"} className="flex items-center">
+          <li className="rounded-full px-3 py-2 border-[1px] border-gray-500 hover:border-gray-400 bg-orange-600 text-xl">
+            <Link to={"/"} className="flex items-center">
               <Bell size={20} />
             </Link>
           </li>
@@ -54,14 +53,15 @@ const NavBar = () => {
           {links.map((e) => (
             <li key={e.label} className="flex items-center space-x-2">
               <NavLink
+                onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
                 to={e.path}
                 className={({ isActive }) => `
                 flex items-center space-x-2 font-semibold  ${
                   isActive ? "text-red-500 font-semibold" : ""
                 }`}
               >
-                <e.icon size={18} />
-                <span>{e.label}</span>
+                <e.icon size={23} />
+                <span className="text-xl">{e.label}</span>
               </NavLink>
             </li>
           ))}

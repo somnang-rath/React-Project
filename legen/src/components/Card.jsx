@@ -48,7 +48,10 @@ const Card = () => {
             key={e.id}
             className="w-72 bg-gradient-to-br from-zinc-900 to-zinc-800 rounded-xl overflow-hidden shadow-lg text-white p-5 hover:shadow-2xl hover:scale-105 duration-300 transition-all"
           >
-            <Link to={`/movie/${e.id}`}>
+            <Link
+              to={`/movie/${e.id}`}
+              onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
+            >
               <img
                 src={e.movie_image}
                 alt={e.title_movie}

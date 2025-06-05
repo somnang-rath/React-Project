@@ -1,5 +1,5 @@
 import Movies from "../data/Movies";
-import { Calendar1, Book, Timer, EyeOff } from "lucide-react";
+import { Calendar1, Book, Timer, EyeOff, IdCard } from "lucide-react";
 import { useParams } from "react-router-dom";
 import S_2D from "../assets/img/screen/S_2D.png";
 import { useState } from "react";
@@ -103,7 +103,7 @@ const DetailMovie = () => {
           <div className="w-full h-[1px] bg-amber-50 mask-x-from-50% mask-x-to-90%  shadow-2xl"></div>
         </div>
       </div>
-      {showe ? <ShoweTime /> : <Detail />}
+      {showe ? <ShoweTime id={id} /> : <Detail />}
     </div>
   );
 };

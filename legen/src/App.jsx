@@ -7,6 +7,8 @@ import Cinemas from "./page/cinema";
 import LocationDetail from "./page/LocationDetail";
 import Offers from "./page/Offers";
 import OffersDetail from "./page/OffersDetail";
+import Payment from "./page/Payment";
+import Login from "./page/Login";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -29,6 +31,10 @@ const router = createBrowserRouter([
         element: <OffersDetail />,
       },
       {
+        path: "payment/:id",
+        element: <Payment />,
+      },
+      {
         path: "cinemas",
         element: <Cinemas />,
       },
@@ -41,6 +47,10 @@ const router = createBrowserRouter([
         element: <h1>F&B</h1>,
       },
     ],
+  },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 function App() {
