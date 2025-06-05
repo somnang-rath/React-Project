@@ -66,7 +66,7 @@ const Payment = () => {
         backgroundPosition: "center",
       }}
     >
-      <div className="w-full backdrop-blur-md">
+      <div className="w-full backdrop-blur-md transition-all duration-300">
         {renderComponent()}
         {/* <Seat id={id} price={price} setPrice={setPrice} /> */}
         {/* <OderFB id={id} price={price} setPrice={setPrice} /> */}

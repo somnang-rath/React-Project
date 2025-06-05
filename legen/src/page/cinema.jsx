@@ -3,7 +3,7 @@ import slider_location from "../assets/img/slider/slider_location.jpeg";
 import CardLocations from "../components/CardLocations";
 const Cinemas = () => {
   return (
-    <div className="">
+    <div className="transition-all duration-300">
       <div
         style={{
           backgroundImage: `url('${slider_location}')`,

@@ -2,7 +2,7 @@ import React from "react";
 
 const DiamondMemberPage = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white">
+    <div className="min-h-screen bg-gradient-to-b from-gray-900 to-black text-white transition-all duration-300">
       {/* Header */}
       <header className="py-8 px-4 text-center">
         <h1 className="text-4xl md:text-6xl font-bold text-yellow-400 mb-2">

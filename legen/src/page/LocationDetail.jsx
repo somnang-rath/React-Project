@@ -13,7 +13,7 @@ const LocationDetail = () => {
   const location = Locations.find((e) => e.id.toString() == id);
   console.log(location);
   return (
-    <div>
+    <div className="transition-all duration-300">
       <div
         style={{
           backgroundImage: `url(${sliderSid})`,

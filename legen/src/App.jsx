@@ -10,6 +10,7 @@ import OffersDetail from "./page/OffersDetail";
 import Payment from "./page/Payment";
 import Login from "./page/Login";
 import SignUp from "./page/SignUp";
+import Profile from "./page/Profile";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "f&b",
         element: <h1>F&B</h1>,
+      },
+      {
+        path: "profile",
+        element: <Profile />,
       },
     ],
   },

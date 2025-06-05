@@ -5,7 +5,7 @@ const OffersDetail = () => {
   const { id } = useParams();
   const offer = Offers.find((e) => e.id.toString() == id);
   return (
-    <div>
+    <div className="transition-all duration-300">
       <div className="px-20 py-5 2xl:px-0 2xl:w-8/12 2xl:mx-auto mt-30 space-y-8">
         <div className="flex mb-3 items-cente h-1/2 space-x-3">
           <Link to={"/offers"}>

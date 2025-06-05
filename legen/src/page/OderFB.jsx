@@ -56,7 +56,7 @@ const OderFB = (props) => {
   );
   console.log(seates);
   return (
-    <div className="flex flex-col justify-center items-center pt-36 space-x-10">
+    <div className="flex flex-col justify-center items-center pt-36 space-x-10 transition-all duration-300">
       <div className="flex justify-center   space-x-10">
         <div className=" flex flex-col  space-y-5 ">
           <h1 className="text-2xl text-white font-semibold">F&B (Option)</h1>

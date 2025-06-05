@@ -4,6 +4,7 @@ import { NavLink, Link } from "react-router-dom";
 import { UserRoundSearch, ShieldCheck, UserRound, Bell } from "lucide-react";
 import links from "../data/LinkPage/LinkIcon";
 const NavBar = () => {
+  const storedUser = JSON.parse(localStorage.getItem("Users"));
   return (
     <nav className="px-30 fixed  w-full backdrop-blur-sm z-50">
       {/* Nav Bar  */}
@@ -34,10 +35,17 @@ const NavBar = () => {
             </Link>
           </li>
           <li className="rounded-full px-3 py-2 border-[1px] border-gray-500 hover:border-gray-400 bg-orange-600 text-xl">
-            <Link to={"/"} className="flex items-center">
-              <UserRound size={20} />
-              Join New
-            </Link>
+            {storedUser ? (
+              <Link to={"/profile"} className="flex items-center">
+                <UserRound size={20} />
+                Profile
+              </Link>
+            ) : (
+              <Link to={"/login"} className="flex items-center">
+                <UserRound size={20} />
+                Log in
+              </Link>
+            )}
           </li>
           <li className="rounded-full px-3 py-2 border-[1px] border-gray-500 hover:border-gray-400 bg-orange-600 text-xl">
             <Link to={"/"} className="flex items-center">

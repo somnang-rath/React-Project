@@ -12,7 +12,7 @@ const DetailMovie = () => {
   const movie = Movies.find((e) => e.id == id);
   console.log(movie);
   return (
-    <div className="">
+    <div className="transition-all duration-300">
       <div
         style={{
           backgroundImage: `url(${movie.movie_image})`,

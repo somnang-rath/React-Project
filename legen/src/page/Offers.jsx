@@ -4,7 +4,7 @@ import CardOffers from "../components/CardOffers";
 
 const Offers = () => {
   return (
-    <div>
+    <div className="transition-all duration-300">
       {" "}
       <div
         style={{
