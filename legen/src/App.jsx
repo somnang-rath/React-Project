@@ -9,6 +9,7 @@ import Offers from "./page/Offers";
 import OffersDetail from "./page/OffersDetail";
 import Payment from "./page/Payment";
 import Login from "./page/Login";
+import SignUp from "./page/SignUp";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
   },
 ]);
 function App() {
