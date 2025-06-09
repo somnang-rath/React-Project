@@ -26,8 +26,6 @@ function SignUp() {
     localStorage.setItem("Users", JSON.stringify(user));
     alert("Successfully signed up!");
 
-    console.log(user);
-
     // Reset fields
     setEmail("");
     setPassword("");

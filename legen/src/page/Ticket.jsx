@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ticketImg from "../assets/img/ticket/ticket_movie.png";
-import Movies from "../data/Movies"; // ⬅️ IMPORT នេះបើអ្នកប្រើ `movieId` ដើម្បីរក title
+import Movies from "../data/Movies";
 
 const Ticket = () => {
   const [showUpcoming, setShowUpcoming] = useState(true);
