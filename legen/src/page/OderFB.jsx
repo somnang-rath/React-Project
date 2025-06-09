@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Timer, ArrowRight } from "lucide-react";
 import p1 from "../assets/img/F&B/97101.jpg";
 import Movies from "../data/Movies";
+import { useTicket } from "../context/TicketProvider ";
 
 const comboList = [
   { id: 1, name: "Combo 1", price: 5.0 },
@@ -12,6 +13,7 @@ const comboList = [
 ];
 
 const OderFB = (props) => {
+  const { location } = useTicket();
   const [selectedCombos, setSelectedCombos] = useState({});
   const {
     id,
@@ -54,7 +56,6 @@ const OderFB = (props) => {
     (acc, curr) => acc + curr.price * curr.qty,
     0
   );
-  console.log(seates);
   return (
     <div className="flex flex-col justify-center items-center pt-36 space-x-10 transition-all duration-300">
       <div className="flex justify-center   space-x-10">
@@ -148,7 +149,7 @@ const OderFB = (props) => {
             </div>
             <div className="flex justify-between text-xl font-semibold">
               <p>Cinema</p>
-              <p>Locition</p>
+              <p className="">{location}</p>
             </div>
             <div className="flex justify-between text-xl font-semibold">
               <p>Price</p>

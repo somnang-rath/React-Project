@@ -1,23 +1,57 @@
-import React from "react";
+import React, { useRef } from "react";
 import Movies from "../data/Movies";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 import dayjs from "dayjs";
 import Offers from "../data/Offers";
+import { useTicket } from "../context/TicketProvider ";
 
 const Card = () => {
-  const [selectedDate, setSelectedDate] = useState(
-    dayjs().format("YYYY-MM-DD")
-  );
+  const { selectedDate, setSelectedDate } = useTicket();
   const generateDates = () => {
     const today = dayjs();
     return Array.from({ length: 14 }, (_, i) => today.add(i, "day"));
+  };
+  const scrollRef = useRef(null);
+  let isDown = false;
+  let startX, scrollLeft;
+
+  const handleMouseDown = (e) => {
+    isDown = true;
+    const slider = scrollRef.current;
+    slider.classList.add("cursor-grabbing");
+    startX = e.pageX - slider.offsetLeft;
+    scrollLeft = slider.scrollLeft;
+  };
+
+  const handleMouseLeave = () => {
+    isDown = false;
+    scrollRef.current.classList.remove("cursor-grabbing");
+  };
+
+  const handleMouseUp = () => {
+    isDown = false;
+    scrollRef.current.classList.remove("cursor-grabbing");
+  };
+
+  const handleMouseMove = (e) => {
+    if (!isDown) return;
+    e.preventDefault();
+    const x = e.pageX - scrollRef.current.offsetLeft;
+    const walk = (x - startX) * 2;
+    scrollRef.current.scrollLeft = scrollLeft - walk;
   };
   return (
     <div className="flex flex-col justify-center items-center px-60 pb-3  2xl:mx-auto top-0  mb-5 p-4">
       <div className="flex flex-col px-20 py-5 2xl:px-0 2xl:w-8/12 2xl:mx-auto space-y-4">
         <h1 className="text-white text-5xl font-bold">Now Showing</h1>
-        <div className="flex w-full overflow-x-scroll space-x-3 no-scrollbar  py-2">
+        <div
+          ref={scrollRef}
+          onMouseDown={handleMouseDown}
+          onMouseLeave={handleMouseLeave}
+          onMouseUp={handleMouseUp}
+          onMouseMove={handleMouseMove}
+          className="flex w-full overflow-x-scroll no-scrollbar space-x-3 py-2 cursor-grab"
+        >
           {generateDates().map((date) => {
             const formatted = date.format("YYYY-MM-DD");
             const isSelected = formatted === selectedDate;
@@ -26,13 +60,12 @@ const Card = () => {
               <button
                 key={formatted}
                 onClick={() => setSelectedDate(formatted)}
-                className={`flex flex-col w-60 items-center px-20 py-4 rounded-lg border 
-                ${
-                  isSelected
-                    ? "border-white bg-zinc-900"
-                    : "border-zinc-600 bg-black"
-                } 
-                text-white bg-amber-700`}
+                className={`flex flex-col min-w-[100px] items-center px-5 py-4 rounded-lg border 
+                  ${
+                    isSelected
+                      ? "border-white bg-zinc-900"
+                      : "border-zinc-600 bg-black"
+                  } text-white`}
               >
                 <span className="text-sm">{date.format("ddd")}</span>
                 <span className="text-lg font-bold">{date.format("D")}</span>

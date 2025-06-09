@@ -12,6 +12,7 @@ const Payment = () => {
   const [seates, setSeates] = useState("");
   const [displayComponent, setDisplayComponent] = useState(0);
   const [totalPriceSeates, setTotalPriceSeates] = useState(0);
+
   const renderComponent = () => {
     switch (displayComponent) {
       case 0:
@@ -51,6 +52,7 @@ const Payment = () => {
             setDisplayComponent={setDisplayComponent}
             displayComponent={displayComponent}
             totalPriceSeates={totalPriceSeates}
+            seates={seates}
           />
         );
       default:

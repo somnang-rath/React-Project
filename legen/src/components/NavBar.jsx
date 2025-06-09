@@ -29,7 +29,11 @@ const NavBar = () => {
         {/** Link Bar */}
         <ul className="hidden lg:flex px-1.5 space-x-3 text-white">
           <li className="rounded-full px-3 py-2 border-[1px] border-gray-800 hover:border-gray-400 bg-orange-600 text-xl">
-            <Link to={"/"} className="flex items-center">
+            <Link
+              to={"ticket"}
+              onClick={() => window.scrollTo({ top: 0, behavior: "instant" })}
+              className="flex items-center"
+            >
               <ShieldCheck size={20} />
               Ticket
             </Link>

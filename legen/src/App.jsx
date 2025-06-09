@@ -11,6 +11,8 @@ import Payment from "./page/Payment";
 import Login from "./page/Login";
 import SignUp from "./page/SignUp";
 import Profile from "./page/Profile";
+import Ticket from "./page/Ticket";
+import FoodDrink from "./page/FoodDrink";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -41,12 +43,16 @@ const router = createBrowserRouter([
         element: <Cinemas />,
       },
       {
+        path: "ticket",
+        element: <Ticket />,
+      },
+      {
         path: "offers",
         element: <Offers />,
       },
       {
         path: "f&b",
-        element: <h1>F&B</h1>,
+        element: <FoodDrink />,
       },
       {
         path: "profile",

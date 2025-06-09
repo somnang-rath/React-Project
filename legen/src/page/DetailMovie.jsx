@@ -10,7 +10,6 @@ const DetailMovie = () => {
   const { id } = useParams();
   const [showe, setShowe] = useState(true);
   const movie = Movies.find((e) => e.id == id);
-  console.log(movie);
   return (
     <div className="transition-all duration-300">
       <div

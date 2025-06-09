@@ -2,15 +2,19 @@ import React from "react";
 import { Facebook, Youtube, Instagram, Twitter } from "lucide-react";
 import apple_logo from "../assets/apple_logo.png";
 import google_play from "../assets/google-play.png";
+import logo from "../assets/Legend-logo.png";
 
 const Flooter = () => {
   return (
     <div>
       <div className=" px-20 2xl:px-0 2xl:w-8/12 2xl:mx-auto py-10">
+        <div className="w-full flex justify-center items-center pb-20">
+          <img src={logo} alt="logo" />
+        </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           <div className="flex flex-col  space-y-3">
             <h1 className="text-white font-bold text-xl">Company</h1>
-            <ul className="text-gray-500 text-sm space-y-1">
+            <ul className="text-gray-500 text-xl space-y-1">
               <li>About us</li>
               <li>Contect us</li>
               <li>Cinemas</li>
@@ -18,7 +22,7 @@ const Flooter = () => {
           </div>
           <div className="flex flex-col  space-y-3">
             <h1 className="text-white font-bold text-xl">More</h1>
-            <ul className="text-gray-500 text-sm space-y-1">
+            <ul className="text-gray-500 text-xl space-y-1">
               <li>Promotions</li>
               <li>News & Activity</li>
               <li>My Ticket</li>

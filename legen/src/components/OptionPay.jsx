@@ -1,13 +1,41 @@
-import { Timer, ArrowRight } from "lucide-react";
+import { Timer, ArrowRight, Turtle } from "lucide-react";
 import Movies from "../data/Movies";
 import ChoosePaymentCard from "./ChoosePaymentCard";
 import { Link } from "react-router-dom";
+import { useTicket } from "../context/TicketProvider ";
 
 const OptionPay = (props) => {
-  const { id, price, setDisplayComponent, displayComponent, totalPriceSeates } =
-    props;
-
+  const {
+    id,
+    price,
+    setDisplayComponent,
+    displayComponent,
+    totalPriceSeates,
+    seates,
+  } = props;
+  const { location, selectedDate, selectedTime } = useTicket();
   const movie = Movies.find((e) => e.id.toString() == id);
+  const handlePayment = () => {
+    const ticket = {
+      movieId: id,
+      title: movie.title_movie,
+      movieImage: movie.movie_image,
+      time: selectedTime,
+      releaseDate: selectedDate,
+      format: "2D",
+      hall: movie.genre,
+      cinema: location,
+      seats: seates,
+      total: totalPriceSeates,
+      price: price,
+      createdAt: new Date().toLocaleString(),
+    };
+
+    const stored = JSON.parse(localStorage.getItem("tickets")) || [];
+    stored.push(ticket);
+    localStorage.setItem("tickets", JSON.stringify(stored));
+    console.log(stored);
+  };
 
   return (
     <div className="flex flex-col justify-center items-center pt-36 pb-14 space-x-10">
@@ -36,7 +64,7 @@ const OptionPay = (props) => {
             </div>
             <div className="flex justify-between text-xl font-semibold">
               <p>Seat</p>
-              <p>K4,K5</p>
+              <p>{seates}</p>
             </div>
             <div className="flex justify-between text-xl font-semibold">
               <p>Format</p>
@@ -48,7 +76,7 @@ const OptionPay = (props) => {
             </div>
             <div className="flex justify-between text-xl font-semibold">
               <p>Cinema</p>
-              <p>Locition</p>
+              <p>{location}</p>
             </div>
             <div className="flex justify-between text-xl font-semibold">
               <p>Price</p>
@@ -66,11 +94,9 @@ const OptionPay = (props) => {
             >
               <p>Back</p>
             </button>
-            <Link to={"/"}>
+            <Link to={"/ticket"}>
               <button
-                onClick={() =>
-                  alert(`✅ Checkout successful! Total: $${price.toFixed(2)}`)
-                }
+                onClick={handlePayment}
                 className="px-3 py-2  bg-red-500 rounded-lg flex justify-center items-center"
               >
                 <p className="text-white text-xl">Checkout</p>
